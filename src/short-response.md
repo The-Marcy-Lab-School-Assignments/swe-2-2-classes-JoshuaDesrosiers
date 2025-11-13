@@ -17,6 +17,7 @@ How would you explain to a budding developer what the drawbacks of using factory
 
 ## Response 1
 
+Factory functions take up space on your screen and memory on the users computers, its beneficial to not only isolate the context of our functions but also minimize repetition of structures by using classes. Classes can put a name to repetative structures we store in our code in arrays or objects and give it a context and a toolkit, that way we dont comprimise our eyes, or user memory.
 
 ---
 
@@ -26,7 +27,17 @@ Explain what factors you should consider when deciding to make a property/method
 
 ## Response 2
 
+'i tell this to my students all the time' when trying to figure out wether or not a property/method should be private or public you simply ask yourself two questions:
 
+- who is using this property/method?
+
+If I'm or you're the only person using the method as a developer backend or as a helper, it shouldnt be exposed to the main world for our user!
+
+- Is this a secret?
+
+maybe the who of the property is ambiguos but surely the what should help you hone in on it. Take an algorithm: maybe the user navigates it, and the backend and frontend depend on it, but maybe you *dont* want your users or theifs to know what your algorithm is!
+
+-
 ---
 
 ## Prompt 3
@@ -35,7 +46,7 @@ Explain what factors you should consider when deciding to make a property/method
 
 ## Response 3
 
----
+Well a static method gets called from the class not the instance so what your doing could either be in a larger scope of existing classes or something powerful, or it could even just be an assist method. If the function fits in those 3 catagories it should probably be static these are things not necessarry to the main class but helpful *outside* logic still relevent to the instance.
 
 ## Prompt 4
 
@@ -56,3 +67,11 @@ class Vault {
 Identify what the mistake is, explain why it is a problem, and suggest a way to fix it.
 
 ## Response 4
+
+Well if secrets is a secret why do we expose it by returning a refrence of it in listSecrets? In an instance like this it would be better to use:
+
+```js 
+
+return [...this.#newSecret] 
+
+```
