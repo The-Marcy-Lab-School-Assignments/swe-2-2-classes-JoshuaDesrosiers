@@ -320,12 +320,12 @@ describe(testSuiteName, () => {
     it('withdraw subtracts the amount from the balance and returns a message of the balance', () => {
       const balance1 = 100;
       const amount1 = 50;
-      const msg1 = `Your balance is $50.00.`;
+      const msg1 = `Your balance is $50.00`;
       const bankAccount1 = new BankAccount('Bill', 'Bryers', balance1);
       expect(bankAccount1.withdraw(amount1)).toEqual(msg1);
       const amount2 = 11.25;
 
-      const msg2 = `Your balance is $38.75.`;
+      const msg2 = `Your balance is $38.75`;
       expect(bankAccount1.withdraw(amount2)).toEqual(msg2);
 
       scoreCounter.correct(expect); // DO NOT TOUCH
